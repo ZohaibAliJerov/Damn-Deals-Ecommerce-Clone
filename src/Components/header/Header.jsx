@@ -12,7 +12,7 @@ import twitter from "../../assets/svgs/twitter.svg";
 import instagram from "../../assets/svgs/instagram.svg";
 import linkedin from "../../assets/svgs/linkedin.svg";
 
-const socialIcons = [
+export const socialIcons = [
   { src: facebook, id: 1 },
   { src: twitter, id: 2 },
   { src: instagram, id: 3 },

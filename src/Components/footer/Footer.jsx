@@ -1,6 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import { Row, Col, Button } from "antd";
+import visaCard from "../../assets/svgs/footerSvg/visaSvg.svg";
+import debutCard from "../../assets/svgs/footerSvg/cardSvg.svg";
+import iPay from "../../assets/svgs/footerSvg/ipaySvg.svg";
+import descoverCard from "../../assets/svgs/footerSvg/discoverSvg.svg";
+import paypal from "../../assets/svgs/footerSvg/paypalSvg.svg";
+import amax from "../../assets/svgs/footerSvg/amaxSvg.svg";
+import { socialIcons } from "../header/Header";
+
+const payIcons = [
+  { src: visaCard, id: 12 },
+  { src: debutCard, id: 21 },
+  { src: iPay, id: 32 },
+  { src: descoverCard, id: 41 },
+  { src: paypal, id: 42 },
+  { src: amax, id: 44 },
+];
 
 const Footer = () => {
   return (
@@ -15,7 +31,7 @@ const Footer = () => {
         </HeadingAndInputCol>
       </Row>
       <ListRow>
-        <ListCol xs={24} sm={24} md={24} lg={8} xl={6}>
+        <ListCol xs={24} sm={24} md={24} lg={8} xl={4}>
           <ListUl>
             <ListLi>
               <h3>Contact Us</h3>
@@ -62,14 +78,40 @@ const Footer = () => {
             <ListLi>Best Buy Health</ListLi>
           </ListUl>
         </ListCol>
-        <ListCol xs={24} sm={24} md={24} lg={8} xl={6}>
+        <ListCol xs={24} sm={24} md={24} lg={8} xl={8}>
           <ListUl>
             <ListLi>
               <h3>Follow Us</h3>
             </ListLi>
-            <ListLi>Trade-In Program</ListLi>
-            <ListLi>Electronics Recycling</ListLi>
-            <ListLi> Best Buy Health</ListLi>
+
+            <ListLi>
+              {socialIcons.map((item) => (
+                <img
+                  src={item.src}
+                  key={item.id}
+                  alt="social icon"
+                  style={{
+                    padding: "10px",
+                  }}
+                />
+              ))}
+            </ListLi>
+            <ListLi>Mobile Apps</ListLi>
+            <ListLi> iOS App</ListLi>
+            <ListLi> Android App</ListLi>
+            <ListLi>We Accept</ListLi>
+            <ListLi>
+              {payIcons.map((item) => (
+                <img
+                  src={item.src}
+                  key={item.id}
+                  alt="social icon"
+                  style={{
+                    padding: "10px",
+                  }}
+                />
+              ))}
+            </ListLi>
           </ListUl>
         </ListCol>
       </ListRow>
