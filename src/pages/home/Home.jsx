@@ -1,4 +1,3 @@
-import Header from "../../Components/header/Header";
 import HeaderLine from "../../Components/headerLine/HeaderLin";
 import HeroSlider from "../../Components/heroSlider/HeroSlider";
 import Categories from "../../Components/categories/Categories";

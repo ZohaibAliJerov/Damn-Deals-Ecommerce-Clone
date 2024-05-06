@@ -1,10 +1,10 @@
 import React from "react";
-import { Table } from "antd";
+import { Table, Collapse } from "antd";
 import Tissue from "../../assets/svgs/bestSellerSvgs/tissuSvg.svg";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { cardData } from "../data/Data";
-import { Collapse } from "antd";
+const { Panel } = Collapse;
 
 const rawData = [
   {
@@ -39,6 +39,7 @@ const columns = [
     },
   },
 ];
+
 const text = (
   <ul>
     <li>16-inch MacBook Pro</li>
@@ -46,6 +47,7 @@ const text = (
     <li>USB‑C to MagSafe 3 Cable (2 m)</li>
   </ul>
 );
+
 const items = [
   {
     key: "1",
@@ -60,32 +62,42 @@ const ProductSpecs = () => {
   };
 
   return (
-    <DetailsandSpecsContainer>
-      <hr />
-      <StyledHeading>Details & Specs</StyledHeading>
-      <StyledTable
-        columns={columns}
-        dataSource={transformedData}
-        rowClassName={rowClassName}
-        showHeader={false}
-        pagination={false}
-      />
-
-      <StyledWhatsIncluded>
-        <Collapse items={items} bordered={false} />
-      </StyledWhatsIncluded>
-    </DetailsandSpecsContainer>
+    <StyledAccordion>
+      <Collapse defaultActiveKey={["1"]} accordion>
+        <Panel header="Details & Specs" key="1" style={{ fontSize: "20px" }}>
+          <DetailsandSpecsContainer>
+            {/* <StyledHeading>Details & Specs</StyledHeading> */}
+            <StyledTable
+              columns={columns}
+              dataSource={transformedData}
+              rowClassName={rowClassName}
+              showHeader={false}
+              pagination={false}
+            />
+            <StyledWhatsIncluded>
+              <Collapse items={items} bordered={false} />
+            </StyledWhatsIncluded>
+          </DetailsandSpecsContainer>
+        </Panel>
+      </Collapse>
+    </StyledAccordion>
   );
 };
 
 export default ProductSpecs;
 
+const StyledAccordion = styled.div`
+  padding-top: 20px;
+`;
+
 const DetailsandSpecsContainer = styled.div`
   padding-top: 20px;
 `;
+
 const StyledHeading = styled.h3`
   padding-top: 20px;
 `;
+
 const StyledTable = styled(Table)`
   padding-top: 20px;
   .even-row {
@@ -96,6 +108,7 @@ const StyledTable = styled(Table)`
     background-color: #ffffff;
   }
 `;
+
 const StyledWhatsIncluded = styled.div`
   padding-top: 20px;
 `;
