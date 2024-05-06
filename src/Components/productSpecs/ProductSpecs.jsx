@@ -63,10 +63,12 @@ const ProductSpecs = () => {
 
   return (
     <StyledAccordion>
-      <Collapse defaultActiveKey={["1"]} accordion>
-        <Panel header="Details & Specs" key="1" style={{ fontSize: "20px" }}>
+      <Collapse defaultActiveKey={["0"]} accordion>
+        <Panel
+          header={<StyledPanelHeader>Detail & Specs</StyledPanelHeader>}
+          key="1"
+        >
           <DetailsandSpecsContainer>
-            {/* <StyledHeading>Details & Specs</StyledHeading> */}
             <StyledTable
               columns={columns}
               dataSource={transformedData}
@@ -111,4 +113,8 @@ const StyledTable = styled(Table)`
 
 const StyledWhatsIncluded = styled.div`
   padding-top: 20px;
+`;
+const StyledPanelHeader = styled.div`
+  font-size: 20px;
+  font-weight: 500;
 `;

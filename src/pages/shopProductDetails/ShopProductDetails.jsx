@@ -7,6 +7,7 @@ import ProductMoreInfo from "../../Components/productMoreInfo/ProductMoreInfo";
 import ProductSpecs from "../../Components/productSpecs/ProductSpecs";
 import { cardData } from "../../Components/data/Data";
 import Vendor from "../../Components/vendor/Vendor";
+import ShippingAndReturns from "../../Components/shippingAndReturn/ShippingAndReturn";
 
 const ShopProductDetails = () => {
   const { id } = useParams();
@@ -24,6 +25,7 @@ const ShopProductDetails = () => {
       <ProductMoreInfo />
       <ProductSpecs />
       <Vendor />
+      <ShippingAndReturns />
     </ShopProductContainer>
   );
 };

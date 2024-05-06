@@ -43,7 +43,7 @@ const Vendor = () => {
   return (
     <VendorContainer>
       <Collapse accordion>
-        <Panel header="Vendor Details" key="1" style={{ fontSize: "20px" }}>
+        <Panel header={<StyledPanelHeader>Vendor</StyledPanelHeader>} key="1">
           <div
             style={{
               display: "flex",
@@ -119,4 +119,9 @@ const CardBottom = styled.div`
       font-weight: 400;
     }
   }
+`;
+
+const StyledPanelHeader = styled.div`
+  font-size: 20px;
+  font-weight: 500;
 `;
