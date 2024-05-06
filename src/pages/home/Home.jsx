@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <div>
       <HeaderLine />
-      <HeroSlider />
+      <HeroSlider height={595} />
       <Categories />
       <MajorSavings />
 

@@ -5,7 +5,7 @@ import SliderImage1 from "../../assets/pngs/slider1.png";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 
-const HeroSlider = () => {
+const HeroSlider = ({ height }) => {
   const carouselRef = useRef();
 
   const handlePrevClick = () => {
@@ -16,7 +16,7 @@ const HeroSlider = () => {
     carouselRef.current.next();
   };
   return (
-    <CustomCarousel ref={carouselRef}>
+    <CustomCarousel ref={carouselRef} height={height}>
       <SliderText className="carousel-item">
         <SliderOutlineIcons
           className="carousel-control left-control"
@@ -74,7 +74,8 @@ export default HeroSlider;
 const CustomCarousel = styled(Carousel)`
   max-width: 1400px;
   width: 100%;
-  height: auto;
+  /* height: 595px; */
+  height: ${(props) => props.height}px;
   margin: 2rem auto;
   padding: 0 10px;
   overflow: hidden;

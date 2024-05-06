@@ -105,7 +105,7 @@ const Footer = () => {
                 <img
                   src={item.src}
                   key={item.id}
-                  alt="social icon"
+                  alt="pay icon"
                   style={{
                     padding: "10px",
                   }}
@@ -152,6 +152,7 @@ const StyledInput = styled.input`
   border-radius: 10px;
   text-align: center;
   border: 1px solid #bfb4b4;
+  outline: none;
   @media (max-width: 768px) {
     width: 100%;
     max-width: 300px;

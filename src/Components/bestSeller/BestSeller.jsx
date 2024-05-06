@@ -2,10 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { Row, Col, Card, Rate, Carousel } from "antd";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 const BestSeller = (props) => {
+  console.log(props.listItems);
   const [value, setValue] = useState(5);
   const [slidesToShow, setSlidesToShow] = useState(getSlidesToShow());
   const carouselRef = useRef();
@@ -57,29 +59,31 @@ const BestSeller = (props) => {
       </div>
       <div style={{ marginTop: "20px" }}>
         <StyledCarousel ref={carouselRef} slidesToShow={slidesToShow} autoplay>
-          {props.data.map((data) => (
-            <StyledCard key={data.key}>
-              <Card
-                hoverable
-                style={{
-                  width: 200,
-                  height: 350,
-                  margin: "0 auto",
-                }}
-                cover={<img alt="example" src={data.image} />}
-              >
-                <Meta description={data.brand} />
-                <Meta title={data.title} />
-                <Rate
-                  tooltips={desc}
-                  onChange={setValue}
-                  value={value}
-                  style={{ fontSize: 10 }}
-                />
-                <span>{data.reviews} reviews</span>
-                <Meta title={data.price} />
-              </Card>
-            </StyledCard>
+          {props.data.map((data, index) => (
+            <Link to={`/shopproductdetails/${data._id}`}>
+              <StyledCard key={index}>
+                <Card
+                  hoverable
+                  style={{
+                    width: 200,
+                    height: 350,
+                    margin: "0 auto",
+                  }}
+                  cover={<img alt="example" src={data.image} />}
+                >
+                  <Meta description={data.brand} />
+                  <Meta title={data.title} />
+                  <Rate
+                    tooltips={desc}
+                    onChange={setValue}
+                    value={value}
+                    style={{ fontSize: 10 }}
+                  />
+                  <span>{data.reviews} reviews</span>
+                  <Meta title={data.price} />
+                </Card>
+              </StyledCard>
+            </Link>
           ))}
         </StyledCarousel>
       </div>

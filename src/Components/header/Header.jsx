@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Row, Col, Drawer, Button } from "antd";
+import { Row, Col, Drawer, Button, Menu } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
@@ -11,6 +11,10 @@ import facebook from "../../assets/svgs/facebook.svg";
 import twitter from "../../assets/svgs/twitter.svg";
 import instagram from "../../assets/svgs/instagram.svg";
 import linkedin from "../../assets/svgs/linkedin.svg";
+import { CategoryData, cardData } from "../data/Data";
+import { Link, useNavigate } from "react-router-dom";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Tooltip } from "antd";
 
 export const socialIcons = [
   { src: facebook, id: 1 },
@@ -21,6 +25,19 @@ export const socialIcons = [
 
 const Header = () => {
   const [showDrawer, setShowDrawer] = useState(false);
+  const navigate = useNavigate();
+
+  const handleMenuClicks = (categoryId) => {
+    navigate(`/categorized-products/${categoryId}`);
+  };
+
+  const menu = (
+    <Menu onClick={({ key }) => handleMenuClicks(key)}>
+      {CategoryData.map((cat) => (
+        <Menu.Item key={cat._id.toString()}>{cat.title}</Menu.Item>
+      ))}
+    </Menu>
+  );
 
   const toggleDrawer = () => {
     setShowDrawer(!showDrawer);
@@ -73,18 +90,37 @@ const Header = () => {
         style={{ height: "50px", marginTop: "12px" }}
       >
         <Col xs={0} sm={0} md={5} lg={4} xl={4}>
-          <img src={logo} alt="Logo" />
+          <Link to="/">
+            <img src={logo} alt="Logo" />
+          </Link>
         </Col>
 
         <Col xs={0} sm={0} md={10} lg={13} xl={14}>
           <RightContent className="right-content">
             <SearchInput type="text" placeholder="Search..." />
-            <FilterDropdown className="filter-dropdown">
-              <option value="all">All Categories</option>
-              <option value="filter1">Filter 1</option>
-              <option value="filter2">Filter 2</option>
-              <option value="filter3">Filter 3</option>
-            </FilterDropdown>
+            <Dropdown overlay={menu} trigger={["click"]}>
+              <Button>
+                Categories <DownOutlined />
+              </Button>
+            </Dropdown>
+            {/* <FilterDropdown className="filter-dropdown">
+              <div className="dropdown">
+                <button className="dropbtn">
+                  {selectedCategory ? selectedCategory : "Select Category"}
+                </button>
+                <p>aaaaaaaa</p>
+                <div className="dropdown-content">
+                  {CategoryData?.map((cat) => (
+                    <span
+                      key={cat._id}
+                      onClick={() => handleCategoryChange(cat._id)}
+                    >
+                      {cat.title}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </FilterDropdown> */}
             <SearchIcon className="search-icon">
               <img src={searchicon} alt="search icon" />
             </SearchIcon>
@@ -121,7 +157,7 @@ const Header = () => {
         placement="right"
         closable={false}
         onClose={toggleDrawer}
-        visible={showDrawer}
+        open={showDrawer}
       >
         {/* ------------drawer Content--------- */}
         <div
@@ -134,10 +170,7 @@ const Header = () => {
           <RightContent className="right-content">
             <SearchInput type="text" placeholder="Search products ..." />
             <FilterDropdown className="filter-dropdown">
-              <option value="all">All Categories</option>
-              <option value="filter1">Filter 1</option>
-              <option value="filter2">Filter 2</option>
-              <option value="filter3">Filter 3</option>
+              <option value="filter1">All Categories</option>
             </FilterDropdown>
             <SearchIcon className="search-icon">
               <img src={searchicon} />
@@ -196,6 +229,7 @@ const RightContent = styled.div`
 
 const SearchInput = styled.input`
   border: none;
+  outline: none;
   background-color: #f5f8fa;
   width: 100%;
   border-radius: 26px 0 0 26px;
@@ -206,6 +240,7 @@ const SearchInput = styled.input`
 const FilterDropdown = styled.select`
   background-color: #f5f8fa;
   border: none;
+  outline: none;
   height: 2rem;
   border-left: 1px solid #d6d6d6;
   width: 12rem;

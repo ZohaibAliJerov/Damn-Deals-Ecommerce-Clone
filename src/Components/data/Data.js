@@ -11,66 +11,119 @@ import WatchMobile from "../../assets/svgs/saveOnSvgs/watch&mobileSvg.svg"
 
 export const cardData = [
     {
-        key: 1,
+        _id: 1,
         image: Tissue,
         brand: "SAMSUNG",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50 $45",
-        reviews: 12,
+        title: "Extra Soft Paper Towels",
+        price: "$79.99 $39.99",
+        reviews: 18,
+        category: "Electronics",
+        subCategory: "Laptop",
     },
     {
-        key: 2,
+        _id: 2,
         image: Facial,
         brand: "SONY",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50 $45",
-        reviews: 11,
+        title: "Gentle Facial Cleanser",
+        price: "$12.99",
+        reviews: 22,
+        category: "Glass",
+        subCategory: "taq emanimi",
     },
     {
-        key: 3,
+        _id: 3,
         image: CarSeat,
         brand: "NOKIA",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50 $45",
-        reviews: 13,
+        title: "Infant Car Seats",
+        price: "$199.99",
+        reviews: 27,
+        category: "Mac",
+        subCategory: "Laptopsss",
     },
     {
-        key: 4,
+        _id: 4,
         image: Cycle,
         brand: "XHOIME",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50 $45",
-        reviews: 13,
+        title: "City Bikes",
+        price: "$499.99",
+        reviews: 35,
+        category: "Bike",
+        subCategory: "saeeed a 70",
     },
     {
-        key: 5,
+        _id: 5,
         image: Eggs,
         brand: "LG",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50 $45",
-        reviews: 14,
+        title: "Farm Fresh Eggs",
+        price: "$4.49",
+        reviews: 40,
+        category: "Bags",
+        subCategory: "School bag",
     },
     {
-        key: 6,
+        _id: 6,
         image: Facial,
         brand: "APPLE",
-        title: "Great Value Ultra Strong Paper Towels, Split Sheets, 6 Double",
-        price: "$123.50",
+        title: "Hypoallergenic Facial Wipes",
+        price: "$6.99",
+        reviews: 16,
+        category: "Books",
+        subCategory: "English",
+    },
+    {
+        _id: 7,
+        image: Tissue,
+        brand: "SAMSUNG",
+        title: "Multi-purpose Cleaning Wipes",
+        price: "$9.99 $5.99",
         reviews: 14,
+        category: "Furniture",
+        subCategory: "Chairs",
+    },
+    {
+        _id: 8,
+        image: Facial,
+        brand: "SONY",
+        title: "Anti-Aging Facial Serum",
+        price: "$29.99",
+        reviews: 19,
+        category: "Cars",
+        subCategory: "Audi",
+    },
+    {
+        _id: 9,
+        image: CarSeat,
+        brand: "NOKIA",
+        title: "Convertible Car Seats",
+        price: "$349.99",
+        reviews: 33,
+        category: "Shoes",
+        subCategory: "Niki",
+    },
+    {
+        _id: 10,
+        image: Cycle,
+        brand: "XHOIME",
+        title: "Electric Bikes",
+        price: "$999.99",
+        reviews: 28,
+        category: "Garments",
+        subCategory: "shirts",
     },
 ];
+
 export const cardDatalistItems = [
-    { key: 111, name: "Top 20" },
-    { key: 222, name: "Baby" },
-    { key: 333, name: "Furniture" },
-    { key: 444, name: "Electronics" },
-    { key: 555, name: "All" },
+    { _id: 111, name: "Top 20" },
+    { _id: 222, name: "Baby" },
+    { _id: 333, name: "Furniture" },
+    { _id: 444, name: "Electronics" },
+    { _id: 555, name: "All" },
 ];
 
 
 export const saveOn = [
     {
-        key: 7,
+        _id: 7,
         image: Camera,
         brand: "SONY",
         title: "Hisense 58 Class 4K UHD LCD Roku Smart TV HDR R",
@@ -78,7 +131,7 @@ export const saveOn = [
         reviews: 12,
     },
     {
-        key: 8,
+        _id: 8,
         image: HeadPhones,
         brand: "SAMSUNG",
         title: "onn On-Ear. Headphones,Black",
@@ -86,7 +139,7 @@ export const saveOn = [
         reviews: 11,
     },
     {
-        key: 9,
+        _id: 9,
         image: LCD,
         brand: "NOKIA",
         title: "Sonos One (Gen 2) - Voice Controlled Smart Speaker - Black",
@@ -94,7 +147,7 @@ export const saveOn = [
         reviews: 13,
     },
     {
-        key: 10,
+        _id: 10,
         image: Speaker,
         brand: "LG",
         title: "Logitech Pro Stream Webcam 1080P Camera for HD Video",
@@ -102,7 +155,7 @@ export const saveOn = [
         reviews: 13,
     },
     {
-        key: 11,
+        _id: 11,
         image: WatchMobile,
         brand: "SAMSUNG",
         title: "Apple Watch SE GPS, 40mm Space Gray Aluminum Case",
@@ -110,7 +163,7 @@ export const saveOn = [
         reviews: 14,
     },
     {
-        key: 12,
+        _id: 12,
         image: Facial,
         brand: "APPLE",
         title: "onn On-Ear. Headphones,Black",
@@ -119,22 +172,155 @@ export const saveOn = [
     },
 ];
 export const saveOnlistItems = [
-    { key: 666, name: "See All" },
+    { _id: 666, name: "See All" },
 
 ];
 export const shopCategoriesListItems = [
-    { key: 112, name: "Electronics" },
-    { key: 113, name: "Baby" },
-    { key: 114, name: "Clothings" },
-    { key: 115, name: "Furniture" },
-    { key: 116, name: "Grocery" },
-    // { key: 117, name: "Video Games" },
-    // { key: 118, name: "Kitchen" },
-    // { key: 119, name: "Beauty" },
+    { _id: 112, name: "Electronics" },
+    { _id: 113, name: "Baby" },
+    { _id: 114, name: "Clothings" },
+    { _id: 115, name: "Furniture" },
+    { _id: 116, name: "Grocery" },
 ]
 const topRatedProducts = {
 
 }
 export const nullListItems = [
 
+]
+//////////////////shop cards data/////////////////
+export const shopCardsData = [
+    {
+        id: 1,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 2,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 3,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 4,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 5,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 6,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 7,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 8,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 9,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 10,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 11,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+    {
+        id: 12,
+        title: "LENOVO",
+        description:
+            "Lenovo IdeaPad 3 15.6 Laptop - Sand (Intel Core i7-1165G7/512GB SSD/12GB RAM/Windows 11)",
+        rating: 4.5,
+        reviews: 10,
+        image: "https://via.placeholder.com/150",
+    },
+
+];
+
+
+export const CategoryData = [
+    {
+        _id: 1,
+        title: "Electronics"
+    },
+    {
+        _id: 2,
+        title: "Books"
+    },
+    {
+        _id: 3,
+        title: "Furniture"
+    },
+    {
+        _id: 4,
+        title: "Garments"
+    },
+    {
+        _id: 5,
+        title: "Dry Fruits"
+    }
 ]
