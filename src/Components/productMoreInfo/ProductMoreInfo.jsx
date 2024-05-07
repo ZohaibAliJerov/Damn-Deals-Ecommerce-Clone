@@ -22,39 +22,48 @@ const ProductMoreInfo = () => {
   ];
 
   return (
-    <Collapse accordion>
-      <Panel
-        header={<StyledPanelHeader>More Information</StyledPanelHeader>}
-        key="1"
-      >
-        <ProductMoreInfoContainer>
-          <HeadingContainer>
-            <StyledHeadings>Powerful Performance</StyledHeadings>
-          </HeadingContainer>
-          <div>
-            <StyledUl>
-              {info.map((item, index) => (
-                <StyledLi key={index}>{item}</StyledLi>
-              ))}
-            </StyledUl>
-          </div>
-          <HeadingContainer>
-            <StyledHeadings>Specifications</StyledHeadings>
-          </HeadingContainer>
-          <div>
-            <StyledUl>
-              {specs.map((item, index) => (
-                <StyledLi key={index}>{item}</StyledLi>
-              ))}
-            </StyledUl>
-          </div>
-        </ProductMoreInfoContainer>
-      </Panel>
-    </Collapse>
+    <ProductInfoCont>
+      <Collapse accordion>
+        <Panel
+          header={<StyledPanelHeader>More Information</StyledPanelHeader>}
+          key="1"
+        >
+          <ProductMoreInfoContainer>
+            <HeadingContainer>
+              <StyledHeadings>Powerful Performance</StyledHeadings>
+            </HeadingContainer>
+            <div>
+              <StyledUl>
+                {info.map((item, index) => (
+                  <StyledLi key={index}>{item}</StyledLi>
+                ))}
+              </StyledUl>
+            </div>
+            <HeadingContainer>
+              <StyledHeadings>Specifications</StyledHeadings>
+            </HeadingContainer>
+            <div>
+              <StyledUl>
+                {specs.map((item, index) => (
+                  <StyledLi key={index}>{item}</StyledLi>
+                ))}
+              </StyledUl>
+            </div>
+          </ProductMoreInfoContainer>
+        </Panel>
+      </Collapse>
+    </ProductInfoCont>
   );
 };
 
 export default ProductMoreInfo;
+const ProductInfoCont = styled.div`
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+`;
 
 const ProductMoreInfoContainer = styled.div`
   padding-top: 20px;

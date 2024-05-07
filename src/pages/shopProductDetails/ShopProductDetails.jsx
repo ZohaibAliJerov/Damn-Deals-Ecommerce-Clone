@@ -5,9 +5,20 @@ import ShopBreadcrumb from "../../Components/shopBreadCrump/ShopBreadCrump";
 import ProductDetails from "../../Components/productDetails/ProductDetails";
 import ProductMoreInfo from "../../Components/productMoreInfo/ProductMoreInfo";
 import ProductSpecs from "../../Components/productSpecs/ProductSpecs";
-import { cardData } from "../../Components/data/Data";
+// import { cardData } from "../../Components/data/Data";
 import Vendor from "../../Components/vendor/Vendor";
 import ShippingAndReturns from "../../Components/shippingAndReturn/ShippingAndReturn";
+import CustomerReviews from "../../Components/customerReviews/CustomerReviews";
+import BestSeller from "../../Components/bestSeller/BestSeller";
+
+import {
+  cardData,
+  saveOn,
+  cardDatalistItems,
+  saveOnlistItems,
+  shopCategoriesListItems,
+  nullListItems,
+} from "../../Components/data/Data";
 
 const ShopProductDetails = () => {
   const { id } = useParams();
@@ -26,6 +37,21 @@ const ShopProductDetails = () => {
       <ProductSpecs />
       <Vendor />
       <ShippingAndReturns />
+      <CustomerReviews />
+      <BestSeller
+        data={cardData}
+        listItems={saveOnlistItems}
+        heading="Related Products"
+        showCarouselButtons={false}
+        showAutoplay={false}
+      />
+      <BestSeller
+        data={saveOn}
+        listItems={saveOnlistItems}
+        heading="You may also like"
+        showCarouselButtons={false}
+        showAutoplay={false}
+      />
     </ShopProductContainer>
   );
 };

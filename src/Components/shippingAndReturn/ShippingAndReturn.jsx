@@ -33,6 +33,11 @@ const ShippingAndReturns = () => {
 export default ShippingAndReturns;
 const ShippingAndReturnContainer = styled.div`
   padding-top: 20px;
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 `;
 
 const ShippingAndReturnsText = styled.div`

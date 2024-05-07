@@ -90,6 +90,11 @@ export default ProductSpecs;
 
 const StyledAccordion = styled.div`
   padding-top: 20px;
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 `;
 
 const DetailsandSpecsContainer = styled.div`
