@@ -135,7 +135,9 @@ const Header = () => {
                 id: 5,
               },
               {
-                icon: <FaRegUser style={{ marginRight: "4px" }} />,
+                icon: (
+                  <FaRegUser style={{ marginRight: "4px", color: "black" }} />
+                ),
                 title: "My Account",
                 id: 6,
               },
@@ -146,8 +148,17 @@ const Header = () => {
               },
             ].map((item) => (
               <li key={item.id}>
-                {item.icon}
-                {item.title}
+                {item.title === "My Account" ? (
+                  <CustomLink to="/signup">
+                    {item.icon}
+                    {item.title}
+                  </CustomLink>
+                ) : (
+                  <>
+                    {item.icon}
+                    {item.title}
+                  </>
+                )}
               </li>
             ))}
           </NavNamesAndIcons>
@@ -277,4 +288,7 @@ const NavNamesAndIconsDrawer = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: start;
+`;
+const CustomLink = styled(Link)`
+  color: black;
 `;
